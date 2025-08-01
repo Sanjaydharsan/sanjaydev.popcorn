@@ -1,13 +1,16 @@
-
 export default function Login({ show, onClose }) {
   return (
     <div
       className={`fixed inset-0 z-40 transition-transform duration-500 ${show ? "translate-y-4" : "-translate-y-full"
         } min-h-screen bg-transparent flex items-center justify-center`}
     >
-      <div className="bg-white/10 backdrop-blur-md p-10 rounded-2xl shadow-lg w-full max-w-md text-white">
-        <button onClick={onClose} className="absolute top-2 right-5 text-white">✕</button>
-        <h2 className="text-3xl font-bold text-center mb-6">Sign In</h2>
+      <div className="bg-white/10 backdrop-blur-md p-10 rounded-2xl shadow-lg w-full max-w-md text-white relative">
+        <button onClick={onClose} className="absolute top-3 right-4 text-white text-2xl">✕</button>
+
+        <div className="text-center mb-8">
+          <h2 className="text-4xl font-extrabold mb-2">Welcome</h2>
+          <p className="text-sm text-gray-200">Sign in to continue  <span className="text-red-600 font-medium">Popcorn</span></p>
+        </div>
 
         <form className="space-y-4">
           <div>
@@ -30,24 +33,11 @@ export default function Login({ show, onClose }) {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 transition p-3 rounded-md font-medium"
+            className="w-full bg-red-600 hover:bg-red-700 transition p-3 rounded-md font-medium"
           >
             Sign In
           </button>
         </form>
-
-        <div className="my-6 text-center text-sm text-gray-400">or</div>
-
-        <div className="space-y-3">
-          <button className="w-full flex items-center justify-center gap-2 bg-white text-black font-medium p-3 rounded-md hover:bg-gray-200 transition">
-            <img src="/facebook-icon.png" alt="Facebook" className="w-5 h-5" />
-            Sign in with Facebook
-          </button>
-          <button className="w-full flex items-center justify-center gap-2 bg-white text-black font-medium p-3 rounded-md hover:bg-gray-200 transition">
-            <img src="/google-icon.png" alt="Google" className="w-5 h-5" />
-            Sign in with Google
-          </button>
-        </div>
       </div>
     </div>
   );
